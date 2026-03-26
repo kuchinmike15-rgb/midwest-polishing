@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midwest Mobile Polishing</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family: Arial, sans-serif; background:#0a0a0c; color:#fff;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;}
+.logo{font-size:24px;font-weight:800;}
+.logo span{color:#d4af37}
+.btn{padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;margin-right:10px;text-decoration:none;text-align:center;}
+.btn-gold{background:#d4af37;color:#000;}
+.hero{height:90vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('images/hero.jpg') center/cover;}
+.hero h1{font-size:50px;margin-bottom:15px;}
+.hero p{font-size:20px;margin-bottom:25px;color:#ccc;}
+.services, .contact, .section-dark{padding:80px 0;}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.card{background:#141417;padding:25px;border-radius:15px;border:1px solid #222;}
+.card h3{margin-bottom:10px;color:#d4af37;}
+.slider-container {display: flex; flex-direction: column; gap: 30px;}
+.slider-wrapper {position: relative; overflow: hidden; border-radius: 12px;}
+.slider-image {width: 100%; display: block;}
+.slider-overlay {position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden;}
+.slider-overlay img {width: 100%; display: block;}
+.slider-range {width: 100%; margin-top: 10px;}
+footer{text-align:center; padding:20px; color:#888;}
+@media(max-width:900px){.grid{grid-template-columns:1fr;} .slider-range {margin-top:5px;}}
+@media(max-width:600px){.hero h1{font-size:32px}}
+</style>
+</head>
+
+<body>
+<div class="container">
+<header>
+  <div class="logo">MIDWEST <span>MOBILE POLISHING</span></div>
+  <div>
+    <a href="tel:+18189410017" class="btn btn-gold">Call</a>
+    <a href="sms:+18189410017" class="btn btn-gold">Text</a>
+  </div>
+</header>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1>Mobile Polishing & Paint Correction</h1>
+    <p>Wisconsin • Illinois • West Michigan<br>Restore deep gloss • Remove scratches • Headlight restoration</p>
+    <a href="tel:+18189410017" class="btn btn-gold">Call Now</a>
+    <a href="sms:+18189410017" class="btn btn-gold">Text Now</a>
+  </div>
+</section>
+
+<section class="services">
+<div class="container">
+<h2 style="text-align:center;margin-bottom:40px;">Our Services</h2>
+<div class="grid">
+  <div class="card"><h3>Car Polishing</h3><p>Restore deep gloss and mirror finish</p></div>
+  <div class="card"><h3>Paint Correction</h3><p>Multi-step polishing to remove swirl marks and defects</p></div>
+  <div class="card"><h3>Scratch Removal</h3><p>We safely reduce or remove scratches and paint imperfections</p></div>
+  <div class="card"><h3>Headlight Restoration</h3><p>Remove oxidation and restore clear, bright headlights</p></div>
+  <div class="card"><h3>Boat Polishing</h3><p>Oxidation removal and gelcoat shine restoration</p></div>
+  <div class="card"><h3>Airplane Polishing</h3><p>Professional aluminum and aircraft polishing</p></div>
+  <div class="card"><h3>RV Polishing</h3><p>Restore faded surfaces and protect large vehicles</p></div>
+</div>
+</div>
+</section>
+
+<section class="section-dark">
+<div class="container">
+<h2 style="text-align:center;margin-bottom:30px;">Get a Free Quote</h2>
+<p style="text-align:center;max-width:700px;margin:auto;color:#ccc;">Every vehicle is different. We provide custom pricing based on condition, size and level of polishing required.</p>
+<div style="text-align:center;margin-top:30px;">
+  <a href="sms:+18189410017" class="btn btn-gold">Text for Quote</a>
+  <a href="tel:+18189410017" class="btn btn-gold">Call for Quote</a>
+</div>
+<p style="text-align:center;margin-top:20px;color:#aaa;">Send us photos of your vehicle for a fast estimate</p>
+</div>
+</section>
+
+<section class="section-dark">
+<div class="container">
+<h2 style="text-align:center;margin-bottom:40px;">Before & After</h2>
+<div class="slider-container">
+  <div class="slider-wrapper">
+    <img src="images/before1.jpg" class="slider-image">
+    <div class="slider-overlay" id="overlay1"><img src="images/after1.jpg" class="slider-image"></div>
+    <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this, 'overlay1')">
+  </div>
+  <div class="slider-wrapper">
+    <img src="images/before2.jpg" class="slider-image">
+    <div class="slider-overlay" id="overlay2"><img src="images/after2.jpg" class="slider-image"></div>
+    <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this, 'overlay2')">
+  </div>
+  <div class="slider-wrapper">
+    <img src="images/before3.jpg" class="slider-image">
+    <div class="slider-overlay" id="overlay3"><img src="images/after3.jpg" class="slider-image"></div>
+    <input type="range" min="0" max="100" value="50" class="slider-range" oninput="moveSlider(this, 'overlay3')">
+  </div>
+</div>
+<p style="text-align:center;margin-top:30px;color:#ccc;">Real results — polishing, scratch removal & headlight restoration</p>
+</div>
+</section>
+
+<script>
+function moveSlider(range, overlayId) {
+  const overlay = document.getElementById(overlayId);
+  overlay.style.width = range.value + '%';
+}
+</script>
+
+<section class="contact">
+<div class="container">
+<div class="contact-box" style="background:#141417;padding:40px;border-radius:20px;text-align:center;">
+  <h2>Book Your Service Today</h2>
+  <p style="margin:15px 0;">Call or text anytime — same-day appointments available</p>
+  <a href="tel:+18189410017" class="btn btn-gold">Call Now</a>
+  <a href="sms:+18189410017" class="btn btn-gold">Text Now</a>
+</div>
+</div>
+</section>
+
+<footer>© 2026 Midwest Mobile Polishing</footer>
+
+</body>
+</html>
